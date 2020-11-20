@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ToDos</title>
+
+  <link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
+
+</head>
+<body>
+  <div class="slds-p-top_none">
+    <lightning-card title="ToDo List" style="width: 100%">
+      <div class="slds-page-header">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media">
+              <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                  <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+                  </svg>
+                  <span class="slds-assistive-text">ToDos</span>
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                    <h1>
+                      <span class="slds-page-header__title slds-truncate"
+                        title="<%- firstName %> <%- lastName %> - 4 ToDos"><%- firstName %> <%- lastName %> - 4
+                        ToDos</span>
+                    </h1>
+                  </div>
+                </div>
+                <p class="slds-page-header__name-meta"><%- mail %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-contact" title="contact">
+                    <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
+                    </svg>
+                    <span class="slds-assistive-text">contact</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="ToDos (4)">
+                      <span>ToDos (4)</span>
+                    </a>
+                  </h2>
+                </div>
+                <div class="slds-no-flex">
+                  <button class="slds-button slds-button_neutral">New</button>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+
+                <% for (var i = 0; i < todos.length-1; i++) { %>
+                <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                  <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon_container slds-icon-standard-contact"
+                        title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Contact</span>
+                      </span>
+                    </div>
+                    <div class="slds-media__body">
+                      <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                        <h3 class="slds-tile__title slds-truncate" title="<%= todos[0] %>">
+                          <a href="javascript:void(0);"><%= todos[i] %></a>
+                        </h3>
+                        <div class="slds-shrink-none">
+                          <button
+                            class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small"
+                            aria-haspopup="true" title="More options">
+                            <svg class="slds-button__icon slds-button__icon_hint" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                            </svg>
+                            <span class="slds-assistive-text">More options</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                          <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Priority">
+                            Priority:
+                          </dt>
+                          <dd class="slds-item_detail slds-truncate" title="Medium">
+                            Medium
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+                <% } %>
+
+              </ul>
+            </div>
+          </article>
+        </div>
+        <footer class="slds-card__footer">
+          <a class="slds-card__footer-action" href="javascript:void(0);">View All
+            <span class="slds-assistive-text">Accounts</span>
+          </a>
+        </footer>
+      </article>
+    </lightning-card>
+  </div>
+</body>
+
+</html>
